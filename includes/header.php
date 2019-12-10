@@ -33,6 +33,9 @@
       <a class="navbar-brand" href="index.php">Youth Ministry Records Database</a>
       <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
           <a class="nav-link" href="resources.php">Resources</a>
+          <a class="nav-link" href="addrecord.php">Add Record</a>
+          <a class="nav-link" href="viewrecords.php">View Members</a>
+
              
           <?php
             if(!isset($_SESSION['id'])){
