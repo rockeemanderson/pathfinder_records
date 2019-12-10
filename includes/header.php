@@ -35,6 +35,7 @@
           <a class="nav-link" href="resources.php">Resources</a>
           <a class="nav-link" href="addrecord.php">Add Record</a>
           <a class="nav-link" href="viewrecords.php">View Members</a>
+          <a class="nav-link" href="edituser.php">Edit Member</a>
 
              
           <?php

@@ -23,8 +23,7 @@ require_once 'includes/header.php';
         </div>
 
        
-        <div class="col-lg-4">
-        
+        <div class="col-lg-4">        
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex" >
               <i class="icon-layers m-auto text-primary"> </i>
@@ -34,12 +33,22 @@ require_once 'includes/header.php';
           </div>
         </div>
 
+        <div class="col-lg-4">        
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex" >
+              <i class="icon-layers m-auto text-primary"> </i>
+            </div>
+            <a href="viewrecords.php"> <h3>View Records</h3></a>
+            <p class="lead mb-0">####</p>
+          </div>
+        </div>
+
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
               <i class="icon-pencil m-auto text-primary"></i>
             </div>
-            <h3>Edit Record</h3>
+            <a href ="edituser.php"><h3>Edit Record</h3></a>
             <p class="lead mb-0">Edit existing record</p>
           </div>
         </div>
