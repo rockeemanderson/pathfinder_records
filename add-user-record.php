@@ -13,13 +13,11 @@ $gclass = $crud->getClass();
 
 <h1 class="text-center">Registration of user</h1>
 <form method="post" action="success.php">
-<section class="showcase" >
+	<section class="showcase" >
+		<div id="left">
     <div class="container-fluid p-0">
-     <div class="row no-gutters">
      <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-
-
-      
+ 
 
 <div class="form-group">
     <label for="fname">First Name</label>
@@ -35,8 +33,7 @@ $gclass = $crud->getClass();
 
 <div class="container">
 		<div class="row">
-	        <div class='col-sm-6'>
-	        	<form>
+	           	<form>
 		            <div class="form-group">
                     <label for="dob">Date of Birth</label>
 		                <div class='input-group date' id='dob'>
@@ -47,7 +44,7 @@ $gclass = $crud->getClass();
 		                </div>
 		            </div>
 		        </form>
-	        </div>
+	        
 	    </div>
 	</div>
 <div>
@@ -90,29 +87,43 @@ $gclass = $crud->getClass();
  <?php }?>
  </select>
  </div>
+ </div>
 
- 
+ </div>
+<!-- Right Side -->
+ <div id="right"> 
+ <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+ <!--<div class="custom-file">
+	<label for="avatar">Upload Image</label>
+	<label for="avatar" class="form-text-muted">*Optional</label>
+	<br\>
+	<input type="file" accept="image/*" class="custom-file-imput" id="avatar" name="avatar">
+	<br/> -->
+
+	<div class="custom-file">
+	<input type="file" accept="image/*" class="custom-file-imput" id="avatar" name="avatar">
+	<label class="custom-file-label" for="avatar">Upload Image</label>
+	
+	<small id="avatar" class="form-text text-danger">*Uploading image is optional*</small>
+ </div>
+	
+
+	
+	
+</div>
+	
+ </div>
+ </div>
+
+
 
 <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
-
-</form>
-<br>
-<br>
-<br>
- </div>
- </div>
- </div>
  </section>
+</form>
+ </div>
+ </div>
+ </div>
+ 
 
-            
-
-
-            
-              
-
-
-<br>
-<br>
-<br>
 
 <?php require_once 'includes/footer.php'; ?>
