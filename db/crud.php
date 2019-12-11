@@ -94,7 +94,7 @@ class crud{
 
         public function getUserDetails($user_id){
             try{
-                $sql = "select * from user a inner join church s on a.church_id = s.church_id where user_id";
+                $sql = "select * from users a inner join church s on a.church_id = s.church_id where user_id";
                 $stmt = $this->db->prepare($sql);
                 $stmt ->bindparam(':user_id',$user_id);
                 $stmt->execute();
