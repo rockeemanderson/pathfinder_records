@@ -3,16 +3,19 @@
 $title = 'Record Registration';
 $banner = 'Add new users below';
 require_once 'includes/header.php'; 
+require_once 'includes/auth_check.php';
 require_once 'db/conn.php';
 $results = $crud->getChurch();
 $hon = $crud->getAhonours();
 $gclass = $crud->getClass();
+
+
 ?>
  
 
 
 <h1 class="text-center">Registration of user</h1>
-<form method="post" action="success.php">
+<form method="post" action="success.php" enctype="multipart/form-data">
 	<section class="showcase" >
 		<div id="left">
     <div class="container-fluid p-0">
@@ -28,6 +31,24 @@ $gclass = $crud->getClass();
     <label for="lname">Last Name</label>
     <input type="text" class="form-control" id="lname" name="lname">
 </div>
+
+<div class="form-group">
+	<label for ="gender">Gender </br></label>
+<select name="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+</div>
+ 
+  
+ 
+
+  <div class="form-group">
+	  <label for = "email"> E-mail</label> 
+	  <input reqired type="text" name="email" class="form-control" id="email">
+  
+	</div>
+
 <!-- Datepicker as text field -->   
 
 
@@ -81,7 +102,7 @@ $gclass = $crud->getClass();
 
 <div class= "form-group">
  <label for = "class_id"> Class:</label>
- <select class="form-control" id="class_id" name="class_id">
+ <select class="form-control" id="class" name="class">
  <?php while($c = $gclass->fetch(PDO::FETCH_ASSOC)) {?>
  <option value="<?php echo $c['class_id'] ?>"><?php echo $c['class_name']; ?></option>
  <?php }?>
@@ -100,10 +121,9 @@ $gclass = $crud->getClass();
 	<input type="file" accept="image/*" class="custom-file-imput" id="avatar" name="avatar">
 	<br/> -->
 
-	<div class="custom-file">
-	<input type="file" accept="image/*" class="custom-file-imput" id="avatar" name="avatar">
-	<label class="custom-file-label" for="avatar">Upload Image</label>
-	
+	<div class="form-group">
+	<label for="avatar">Upload Image</label>
+	<input type="file" accept="image/*" class="form-control-file" id="avatar" name="avatar">
 	<small id="avatar" class="form-text text-danger">*Uploading image is optional*</small>
  </div>
 	

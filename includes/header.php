@@ -1,3 +1,6 @@
+<?php include_once 'includes/session.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,18 +36,21 @@
       <a class="navbar-brand" href="index.php">Youth Ministry Records Database</a>
       <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
           <a class="nav-link" href="resources.php">Resources</a>
-          <a class="nav-link" href="addrecord.php">Add Record</a>
-          <a class="nav-link" href="viewrecords.php">View Members</a>
-          <a class="nav-link" href="edituser.php">Edit Member</a>
+          
+          
 
              
           <?php
-            if(!isset($_SESSION['id'])){
+            if(!isset($_SESSION['admin_id'])){
               ?>
               <a class="nav-item nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
             <?php }else{ ?>
-            <a class="nav-item nav-link" href="#"><span>Hello <?php echo $SESSION['username'] ?>!</span><span class="sr-only">(current)</span></a>
+            
+            <a class="nav-link" href="add-user-record.php">Add Record</a>
+            <a class="nav-link" href="viewrecords.php">View Members</a>
+            <a class="nav-link" href="edituser.php">Edit Member</a>
             <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+            </br><a class="nav-item nav-link" href="index.php"><span> Hello <?php echo $_SESSION['username'] ?>!</span><span class="sr-only">(current)</span></a>
 
             <?php };   ?>
           

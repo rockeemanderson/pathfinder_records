@@ -1,6 +1,6 @@
 <?php
 
-class user{
+class backend{
     private $db;
 
         function __construct($conn){
@@ -8,24 +8,23 @@ class user{
         }
 
 
-    public function insertUser($username,$password){
+    public function insertAdmin($username,$password){
         try {
-                $result = $this->getUserbyUsername($username);
+                $result = $this->getAdminbyUsername($username);
                 if ($result['num']>0){
                     return false;
+
                 }else{
                 $new_password=md5($password.$username);
 
-                $sql = "INSERT INTO backend (username,password,email) VALUES(:username, :password,:email)";
+                $sql = "INSERT INTO backend (username,password) VALUES(:username, :password)";
                 $stmt = $this-> db->prepare($sql);
 
                 $stmt->bindparam(':username',$username);
                 $stmt->bindparam(':password',$new_password);
-                $stmt->bindparam(':email',$email);
-                
                                
 
-                $stmt->execute();
+                $stmt->execute();   
                 return true;
                 }
 
@@ -39,9 +38,9 @@ class user{
 
     
 
-    public function getUser($username,$password){
+    public function getAdmin($username,$password){
         try{
-                $sql = "select * from backend where username = :username AND password = :password";
+                $sql = "SELECT * from `backend` where username = :username AND password = :password";
                 $stmt = $this->db->prepare($sql);
                 $stmt ->bindparam(':username',$username);
                 $stmt ->bindparam(':password',$password);
@@ -54,9 +53,9 @@ class user{
         }
     }
 
-    public function getUserbyUsername($username){
+    public function getAdminbyUsername($username){
         try{
-            $sql = "select count(*) as num from backend where username = :username";
+            $sql = "SELECT count(*) as num from backend where username = :username";
             $stmt = $this->db->prepare($sql);
             $stmt ->bindparam(':username',$username);
 

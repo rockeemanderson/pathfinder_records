@@ -3,9 +3,9 @@
     require_once 'includes/header.php'; 
     //require_once 'includes/auth_check.php';
     require_once 'db/conn.php';
-    //$results = $crud->getAttendees();
+    //$results = $crud->getusers();
 
-    //get attendee by id
+    //get user by id
 
     if (!isset($_GET['id'])){
         echo "<h1 class='text-danger'> Please check details and try again</h1>";
@@ -33,8 +33,8 @@
 <br/>
 
   <a href="viewrecords.php" class="btn btn-info">Back to list</a>
-  <a href="edit.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-warning">Edit</a>
-  <a onclick="rturn confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-danger">Delete</a>
+  <a href="edit.php?id=<?php echo $result['user_id'] ?>" class="btn btn-warning">Edit</a>
+  <a onclick="rturn confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $result['user_id'] ?>" class="btn btn-danger">Delete</a>
 
 
 

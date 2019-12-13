@@ -3,7 +3,9 @@
 $title = 'Home';
 $banner = 'Youth Ministries Database for Clubs and Honours';
 require_once 'includes/header.php'; 
-//require_once 'db/conn.php';
+require_once 'db/conn.php';
+
+
 //$results = $crud->getSpecialties();
 ?>
 
@@ -33,7 +35,7 @@ require_once 'includes/header.php';
           </div>
         </div>
 
-        <div class="col-lg-4">        
+      <!--  <div class="col-lg-4">        
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex" >
               <i class="icon-layers m-auto text-primary"> </i>
@@ -41,14 +43,14 @@ require_once 'includes/header.php';
             <a href="viewrecords.php"> <h3>View Records</h3></a>
             <p class="lead mb-0">####</p>
           </div>
-        </div>
+        </div> -->
 
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
               <i class="icon-pencil m-auto text-primary"></i>
             </div>
-            <a href ="edituser.php"><h3>Edit Record</h3></a>
+            <a href ="edituser.php"><h3>View and Edit Records</h3></a>
             <p class="lead mb-0">Edit existing record</p>
           </div>
         </div>
@@ -61,12 +63,12 @@ require_once 'includes/header.php';
     <div class="container-fluid p-0">
       <div class="row no-gutters">
 
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" ><iframe width="700" height="345" src="https://www.youtube.com/embed/-K9g8HB0R1Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Fully Responsive Design</h2>
-          <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+          <h2>Pathfinders</h2>
+          <p class="lead mb-0">World Pathfinder Day 2019 is fast approaching! We will celebrate worldwide on September 21, 2019</p>
         </div>
-      </div>
+      </div><!--
       <div class="row no-gutters">
         <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
         <div class="col-lg-6 my-auto showcase-text">
@@ -81,7 +83,7 @@ require_once 'includes/header.php';
           <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <!-- Testimonials -->

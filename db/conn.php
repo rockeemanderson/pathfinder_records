@@ -29,11 +29,11 @@
 
     }
     require_once 'crud.php';
-    //require_once 'user.php';
-   // $user = new user($pdo);
+    require_once 'backend.php';
+    $admin = new backend($pdo);
     $crud = new crud($pdo);
 
-    //$user->insertUser("admin","password");
+   // $admin->insertAdmin("admin","@dministrat0r");
 
 
 

@@ -1,7 +1,8 @@
 <?php
     $title = 'Login';
     require_once 'includes/header.php'; 
-    //require_once 'db/conn.php';
+    require_once 'db/conn.php';
+
         
 
 //IF DATA WAS SUBMITTED VIA FORM POST REQUEST THEN..... 
@@ -11,14 +12,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $password = $_POST['password'];
     $new_password = md5($password.$username);
 
-    $result= $user->getUser($username,$new_password);
+    $result= $admin->getAdmin($username,$new_password);
     if (!$result){
         echo '<div class="alert alert-danger">Username or Password is incorrect! Please try again.</div>';
     }else{
        
         $_SESSION['username'] = $username;
         $_SESSION['admin_id'] = $result['admin_id'];
-        header("Location: viewrecords.php");
+        header("Location: edituser.php");
        
        
     }

@@ -8,18 +8,20 @@ class crud{
             $this->db=$conn;
         }
 
-        public function insertRecord($fname, $lname, $dob, $class, $church, $reg_date){
+        public function insertRecord($fname, $lname, $dob, $gender, $class, $church, $avatar_path, $email, $reg_date){
             try {
-                $sql = "INSERT INTO users(fname, lname, dob, class_id, church_id, reg_date) VALUES (:fname, :lname, :dob, :class, :church, :reg_date)";
+                $sql = "INSERT INTO users(fname, lname, dob, gender, class_id, church_id, avatar_path, email, reg_date) VALUES (:fname, :lname, :dob, :gender, :class, :church, :avatar_path, :email, :reg_date)";
                 $stmt = $this->db->prepare($sql);
 
                 $stmt->bindparam(':fname',$fname);
                 $stmt->bindparam(':lname',$lname);
-                //$stmt->bindparam(':honours_granted',$honours_granted);
                 $stmt->bindparam(':dob',$dob);
+                $stmt->bindparam(':gender',$gender);
                 $stmt->bindparam(':class',$class);
                 $stmt->bindparam(':church',$church);
+                $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':reg_date',$reg_date);
+                $stmt->bindparam(':avatar_path',$avatar_path);
                 
                 $stmt->execute();
                 return true;
@@ -34,22 +36,25 @@ class crud{
             
         }
 
-        public function editUser($user_id, $fname, $lname, $dob, $honours_granted, $class, $church){
+        public function editUser($user_id, $fname, $lname, $honours_id, $class, $church, $email){
             
             
             try {
-                $sql = "UPDATE `users` SET `fname`=:fname,`lname`=:lname,`dob`=:dob,`honours_granted`=:honours_granted,`class_id`=:class, `church_id`=:church WHERE user_id = :user_id";
+                $sql = "UPDATE `users` SET `fname`=:fname,`lname`=:lname, `honours_id`=:honours_id,`class_id`=:class, `church_id`=:church, `email`=:email WHERE user_id = :user_id";
                 $stmt = $this->db->prepare($sql);
 
                 $stmt->bindparam(':user_id',$user_id);
                 $stmt->bindparam(':fname',$fname);
                 $stmt->bindparam(':lname',$lname);
-                $stmt->bindparam(':honours_granted',$honours_granted);
-                $stmt->bindparam(':dob',$dob);
-                $stmt->bindparam(':class_id',$class);
-                $stmt->bindparam(':church_id',$church);
-                
-        
+                $stmt->bindparam(':honours_id',$honours_id);
+                //$stmt->bindparam(':dob',$dob);
+                //$stmt->bindparam(':gender',$gender);
+                $stmt->bindparam(':class',$class);
+                $stmt->bindparam(':church',$church);
+                $stmt->bindparam(':email',$email);
+               // $stmt->bindparam(':reg_date',$reg_date);
+               // $stmt->bindparam(':avatar_path',$avatar_path);
+                                   
                 $stmt->execute();
                 return true;
 
@@ -77,7 +82,6 @@ class crud{
         {
             try{
                $sql = "DELETE FROM `users` WHERE `users`.`user_id` = :user_id";
-               //$sql = "delete from attendee where attendee_id = :id"; 
                $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':user_id',$user_id);
                 $stmt->execute();
@@ -94,7 +98,7 @@ class crud{
 
         public function getUserDetails($user_id){
             try{
-                $sql = "select * from users a inner join church s on a.church_id = s.church_id where user_id";
+                $sql = "select * from users a inner join church s on a.church_id = s.church_id where user_id = :user_id";
                 $stmt = $this->db->prepare($sql);
                 $stmt ->bindparam(':user_id',$user_id);
                 $stmt->execute();
