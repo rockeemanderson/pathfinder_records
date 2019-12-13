@@ -1,8 +1,8 @@
 <?php
    $host='remotemysql.com';
-   $db = '6c4yllKzM6';
-   $user = '6c4yllKzM6';
-   $pass = 'ey41esQMWD';
+   $db = 'QhhuR6COg8';
+   $user = 'QhhuR6COg8';
+   $pass = 'MmxTNg4fSb';
    $charset = 'utf8mb4';
     
     
