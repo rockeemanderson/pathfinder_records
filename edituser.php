@@ -8,6 +8,8 @@
     $hon = $crud->getAhonours();
     $gClass = $crud->getClass();
     $results = $crud->getUser();
+    //$gender = $crud->getGender();
+    
 
     if(!isset($_GET['id']))
     {
@@ -18,6 +20,8 @@
     }else{
         $id = $_GET['id'];
         $user=$crud->getUserDetails($id);
+        //$user=$crud->getUser($id);
+        // $gender = $crud->getGender($id);
 
     
 
@@ -31,7 +35,7 @@
 
 <div class= "form-group">
     <input type = "hidden" name="user_id" value="ID: <?php echo $user['user_id']?>"/>
-    <label for="fname">ID </label>
+    <label for="ID">ID </label>
     <input type="text" class="form-control" value="<?php echo $user['user_id']?>" id="user_id" name="user_id" disabled>
 </div>
 
@@ -48,18 +52,15 @@
     <input type="text" class="form-control" value="<?php echo $user['lname']?>" id="lname" name="lname">
 </div>
 
+
 <div class="form-group">
-	<label for ="gender">Gender </br></label>
-<select name="gender" value="<?php echo $user['gender']?> "disabled>
-    
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-  </select>
+	<label for ="gender">Gender </label></br>
+<input type="text" name="gender" value="<?php echo $user['gender']?> "disabled>
 </div>
 
 <div class="form-group">
 	  <label for = "email"> E-mail</label> 
-	  <input reqired type="text" name="email" value="<?php echo $user['email']?>" class="form-control" id="email">
+	  <input reqired type="email" name="email" value="<?php echo $user['email']?>" class="form-control" id="email">
   
     </div>
     
@@ -142,12 +143,12 @@
 	
 	
 </div>
-	
+<button type="submit" name="submit" class="btn btn-success">Save Changes</button>
+  <a href="viewrecords.php" class="btn btn-default btn">Back to list</a>
  </div>
  </div>
            
-  <button type="submit" name="submit" class="btn btn-success">Save Changes</button>
-  <a href="viewrecords.php" class="btn btn-default btn">Back to list</a>
+ 
  </section>
 </form>
  </div>

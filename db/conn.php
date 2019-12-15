@@ -1,16 +1,16 @@
 <?php
-   $host='remotemysql.com';
-   $db = 'QhhuR6COg8';
-   $user = 'QhhuR6COg8';
-   $pass = 'MmxTNg4fSb';
-   $charset = 'utf8mb4';
+   //$host='remotemysql.com';
+   //$db = 'QhhuR6COg8';
+   //$user = 'QhhuR6COg8';
+   //$pass = 'MmxTNg4fSb';
+   //$charset = 'utf8mb4';
     
     
-    //$host='127.0.0.1';
-    //$db = 'paclub_db';
-    //$user = 'root';
-    //$pass = '';
-    //$charset = 'utf8mb4';
+    $host='127.0.0.1';
+    $db = 'paclub_db';
+    $user = 'root';
+    $pass = '';
+    $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 

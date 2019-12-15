@@ -7,7 +7,7 @@
    
     $gChurch = $crud->getChurch();
   //  $hon = $crud->getAhonours();
-    $gClass = $crud->getClass();
+    $gClass = $crud->displayUserClass();
     $results = $crud->getUser();
   
    
@@ -20,6 +20,7 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Date of Birth</th>
+                    <th>Gender</th>
                     <th>Class Level</th>
                     <th>Church Name</th>
                     <th>Operation</th>                       
@@ -27,13 +28,14 @@
             </thead>
             
             <?php 
-                while (($r = $results->fetch(PDO::FETCH_ASSOC))&&($c=$gClass->fetch(PDO::FETCH_ASSOC)))  {?>
+                while (($r = $results->fetch(PDO::FETCH_ASSOC)) && ($s = $gClass->fetch(PDO::FETCH_ASSOC)) ){?>
             <tr> 
                     <td> <?php echo $r['user_id'] ?>    </td>
                     <td> <?php echo $r['fname'] ?>      </td>
                     <td> <?php echo $r['lname'] ?>      </td>
                     <td> <?php echo $r['dob'] ?>        </td>
-                    <td> <?php echo $c['class_name'] ?> </td>
+                    <td> <?php echo $r['gender'] ?>        </td>
+                    <td> <?php echo $s['class_name'] ?> </td>
                     <td> <?php echo $r['church_name'] ?></td>
                     
                     <td>

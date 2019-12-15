@@ -68,6 +68,7 @@ class crud{
             try{
                 
                 $sql = "SELECT * FROM `users` a inner join church s on a.church_id = s.church_id";
+               
                 $result = $this->db->query($sql);
                 return $result;
             }catch (PDOException $e) {
@@ -141,6 +142,7 @@ class crud{
        public function getClass(){
            try{
                $sql = "SELECT * FROM `class`";
+               $sql1 = "SELECT * FROM `users` a inner join class s on a.class_id = s.class_id";
                $result = $this->db->query($sql);
                return $result;
 
@@ -148,13 +150,21 @@ class crud{
                echo $e->getMessage();
                return false;
            }
-
-           
          
-            
         
-        }
+       }
 
+        public function displayUserClass(){
+            try{
+                $sql = "SELECT * FROM `users` a inner join class s on a.class_id = s.class_id";
+                $result = $this->db->query($sql);
+                return $result;
+ 
+            }catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
 
 
         
