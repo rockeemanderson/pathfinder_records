@@ -1,5 +1,6 @@
 <?php
     $title = 'Login';
+    $banner = 'Login';
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
 

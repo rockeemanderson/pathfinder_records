@@ -1,5 +1,5 @@
 <?php
-    $title = 'Success';
+    $title = 'Successfully Edited';
     $banner = '';
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
