@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     <td><input type="password" name="password" class="form-control" id="password">
             </table><br/><br/>
             <input type="submit" value="login" class="btn btn-primary btn-block"><br/>
-            <a href="#">Forgot Password</a>
+            <a href="#"  on click = "">Forgot Password </a>
 
         </form><br/><br/>
     </div>

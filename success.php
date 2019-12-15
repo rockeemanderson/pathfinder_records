@@ -3,7 +3,7 @@
     $banner = 'Thanks for Registering the user';
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
-    require_once 'sendemail.php';
+    
     $reg_date = date("Y-m-d");
     
 
@@ -32,9 +32,11 @@
       $isSuccess = $crud->insertRecord($fname, $lname, $dob, $gender, $class, $church, $destination, $email, $reg_date);
 
       if($isSuccess){
-        SendEmail::sendMail($email, 'New User Registration','Thanks for registering the new user');
+        
 
-        echo'<h1 class= "text-center text-success"> Registration Successful </h1>';   
+        echo'<h1 class= "text-center text-success"> Registration Successful </h1>';
+        
+        SendEmail::sendMail($email, 'New User Registration','Thanks for registering '.$fname. ' '.$lname.' From '.$church.'.');
            
          
 

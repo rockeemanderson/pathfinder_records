@@ -24,17 +24,17 @@ $gclass = $crud->getClass();
 
 <div class="form-group">
     <label for="fname">First Name</label>
-    <input type="text" class="form-control" id="fname" name="fname">
+    <input required type="text" class="form-control" id="fname" name="fname">
 </div>
 
 <div class="form-group">
     <label for="lname">Last Name</label>
-    <input type="text" class="form-control" id="lname" name="lname">
+    <input required type="text" class="form-control" id="lname" name="lname">
 </div>
 
 <div class="form-group">
 	<label for ="gender">Gender </br></label>
-<select name="gender">
+<select required name="gender">
     <option value="male">Male</option>
     <option value="female">Female</option>
   </select>
@@ -43,11 +43,11 @@ $gclass = $crud->getClass();
   
  
 
-  <div class="form-group">
-	  <label for = "email"> E-mail</label> 
-	  <input reqired type="text" name="email" class="form-control" id="email">
-  
-	</div>
+<div class="form-group">
+        <label for="email">Email address</label>
+        <input required pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-msuted">For Pathfinder/Master Guide/Guardian/Parent</small>
+    </div>
 
 <!-- Datepicker as text field -->   
 
