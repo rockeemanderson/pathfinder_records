@@ -33,7 +33,7 @@
     $admin = new backend($pdo);
     $crud = new crud($pdo);
 
-   // $admin->insertAdmin("admin","@dministrat0r");
+   $admin->insertAdmin("admin","@dministrat0r");
 
 
 
